@@ -12,26 +12,38 @@ class House:
     def __eq__(self, other):
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
             return self.number_of_floors == other.number_of_floors
+        else:
+            return False
 
     def __lt__(self, other):
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
             return self.number_of_floors < other.number_of_floors
+        else:
+            return NotImplemented
 
     def  __le__(self, other):
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
             return self.number_of_floors <= other.number_of_floors
+        else:
+            return NotImplemented
 
     def __gt__(self, other):
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
             return self.number_of_floors > other.number_of_floors
+        else:
+            return NotImplemented
 
     def  __ge__(self, other):
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
             return self.number_of_floors >= other.number_of_floors
+        else:
+            return NotImplemented
 
     def __ne__(self, other):
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
             return self.number_of_floors != other.number_of_floors
+        else:
+            return NotImplemented
 
     def __add__(self, value):
         if isinstance(value,int):
@@ -41,11 +53,11 @@ class House:
         return self
 
     def __radd__(self, value):
-        self.number_of_floors.__add__(value)
+        self.__add__(value)
         return self
 
     def  __iadd__(self, value):
-        self.number_of_floors.__add__(value)
+        self.__add__(value)
         return self
 
     def go_to(self, new_floor):
